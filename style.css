@@ -1,0 +1,216 @@
+:root {
+  --black: #111;
+  --yellow: #f5c200;
+  --gray: #ccc;
+}
+
+* {
+  box-sizing: border-box;
+}
+button,
+label {
+  font-family: "Vazirmatn", sans-serif;
+}
+body {
+  margin: 0;
+  font-family: "Vazirmatn", sans-serif;
+  direction: rtl;
+  background: #000;
+  color: #fff;
+}
+
+label{
+    margin-bottom: 10px;
+}
+.bg {
+  position: fixed;
+  inset: 0;
+  background: url("./luffy-login.jpg") center/cover;
+  filter: blur(6px);
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* هدر */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.top h1 {
+  font-size: 18px;
+  color: var(--yellow);
+}
+
+.help {
+  background: none;
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.calculator {
+  display: grid;
+  grid-template-columns: 1fr 250px;
+  gap: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.display {
+  grid-column: 1 / 2;
+  background: #222;
+  padding: 15px;
+  font-size: 20px;
+  text-align: left;
+  border-radius: 5px;
+  color: var(--yellow);
+}
+
+.keys {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.row button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background: #333;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.row button:active {
+  background: #444;
+}
+
+.fn {
+  background: var(--yellow);
+  color: black;
+}
+
+.adv {
+  background: #222;
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+}
+
+#clear {
+  background: #900;
+}
+
+.equals {
+  background: var(--yellow);
+  color: black;
+  font-weight: bold;
+}
+
+.converter {
+  background: #222;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.converter h2 {
+  margin: 0 0 10px;
+  color: var(--yellow);
+}
+
+.converter input,
+.converter select {
+  width: 100%;
+  padding: 8px;
+  background: #111;
+  border: 1px solid #444;
+  color: white;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.convertResult {
+  margin-top: 10px;
+  padding: 10px;
+  background: #111;
+  border-radius: 5px;
+  color: var(--gray);
+  text-align: center;
+}
+
+.modal {
+  z-index: 1000;
+
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal[aria-hidden="false"] {
+  display: flex;
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 400px;
+  background: #111;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: none;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#convertBtn {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.25s ease-in-out;
+}
+
+#convertBtn:hover {
+  filter: brightness(1.15);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 800px) {
+  .calculator {
+    grid-template-columns: 1fr;
+  }
+}
